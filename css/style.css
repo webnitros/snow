@@ -77,13 +77,16 @@ body {
 }
 
 .card_task {
-    padding: 2px 2px;
+    padding: 3px 5px;
     cursor: pointer;
-    height: 150px;
-    width: 260px;
+    min-height: 150px;
+    width: 300px;
     background-color: #d8d8d8;
-    margin: 2px 2px 2px 2px;
-    position: relative;
+    margin: 5px 5px;
+}
+
+.task_checkbox {
+    background-color: #cac3c3;
 }
 
 .card_task_image {
@@ -95,8 +98,38 @@ body {
 
 .card_task_options {
     padding: 2px 6px;
+    margin-right: 10px;
+    position: relative;
 }
 
 .card_task_image_icon {
+    position: absolute;
+    top: 0;
+    right: 3px;
+    text-align: center;
+    height: 83px;
+}
+
+.card_task_image_img {
+    margin-bottom: 5px;
+}
+
+.card_task_image_icon img {
     width: 24px;
 }
+
+.card_task_image_checkbox {
+    height: 0;
+}
+
+.card_task_image_checkbox_form {
+    position: relative;
+    top: -22px;
+    right: 3px;
+}
+
+.card_task_image_checkbox_form .form-check-input{
+    width: 20px;
+    height: 20px;
+}
+

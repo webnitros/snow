@@ -9,47 +9,68 @@
 </head>
 
 <body>
-<!-- <button type="button" onclick="createTasksBoardTest()">Сформировать</button> -->
 <div id="task_board">
     <div class="container">
-        <div class="border row">
-            <div v-for="(task, index) in tasks" v-bind:id="'taskId='+task.taskId" class="col w-200">
-                <div class="card_task" v-bind:id="'taskId='+task.taskId">
-                    <div class="row">
-                        <div class="col col-3">
-                            <img class="card_task_image" :src="task.images" alt="">
+        <!-- Кнопка выделения всех чекбоксов -->
+        <div class="row mb-3">
+            <div class="col">
+                <button type="button" class="btn btn-primary" @click="selectAllCheckboxes">
+                    {{ selectAllButtonText }}
+                </button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div v-for="(task, index) in tasks" v-bind:id="'taskId='+task.taskId" class=" col-md-auto card_task" :class="{ 'task_checkbox': task.checked }">
+                <div v-bind:id="'taskId='+task.taskId" @click="handleCardClick(task, $event)">
+                    <div v-bind:id="'taskId='+task.taskId">
+                        <div class="row justify-content-md-center task_header" @click="handleText(task)">
+                            <div class="col col-3">
+                                <img class="card_task_image" :src="task.images" alt="">
+                            </div>
+                            <div class="col col-9" v-bind:id="'taskId='+task.taskId" v-bind:taskId='task.taskId'>
+                                <span>{{task.taskDescription}}</span>
+                            </div>
                         </div>
-                        <div class="col col-9" v-bind:id="'taskId='+task.taskId" v-bind:taskId='task.taskId'>
-                            <span>{{task.taskDescription}}</span>
+
+                        <div class="row">
+                            <div class="col ">
+                                <div class="card_task_options row justify-content-start">
+                                    <!-- text icon-->
+                                    <div class="col col-11 task_options" @click="handleText(task)">
+                                        <div class="row">
+                                            <div class="col-6">Начало:<b>11:01</b></div>
+                                            <div class="col-6">Конец:<b>-</b></div>
+                                            <div class="col-6">Кол:<b>1 шт</b></div>
+                                            <div class="col-6">Сумма:<b>467,5022</b></div>
+                                            <div class="col-6">Статус:<b>Черновик</b></div>
+                                            <div class="col-6">Часов:<b>45,5</b></div>
+                                        </div>
+                                    </div>
+                                    <!-- baby icon-->
+                                    <div class="col col-1 card_task_image_icon">
+                                        <div class="card_task_image_img" @click="handleBaby(task)">
+                                            <img src="images/baby.jpeg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="row">
-                        <div class="col ">
-                            <div class="card_task_options row justify-content-start">
-                                <div class="col-6">Начало:<b>11:01</b></div>
-                                <div class="col-6">Конец:<b>-</b></div>
-                                <div class="col-6">Кол:<b>1 шт</b></div>
-                                <div class="col-6">Сумма:<b>467,50</b></div>
-                                <div class="col-6">Статус:<b>Черновик</b></div>
-                                <div class="col-6">Часов:<b>45,5</b></div>
+                    <div class="row justify-content-end card_task_image_checkbox">
+                        <div class="col-auto">
+                            <div class="form-check card_task_image_checkbox_form">
+                                <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        :id="'taskCheckbox_' + task.id"
+                                        v-model="task.checked"
+                                        @change="handleCheckboxChange(task, $event)"
+                                >
+                                <label class="form-check-label" for="flexCheckDefault"></label>
                             </div>
-                            <div class="card_task_image_icon" @click="changeTaskBoard3">
-                                <img src="images/baby.jpeg" alt="">
-                            </div>
-
-                            <!-- <span v-bind:id="'taskId='+task.taskId">
-                                 {{task.taskDate}}
-                             </span>
-                             <span v-bind:id="'taskId='+task.taskId">{{task.taskName}}</span>
-                             <span v-if="task.isСritical" data-feather="flag"></span>
-                             <span v-if="!task.isСritical" data-feather="star"></span>-->
                         </div>
                     </div>
-
-
-                    <!-- <h7 v-bind:id="'taskId='+task.taskId">{{task.images}}</h7> -->
-                    <!-- <img src="images/item1.png"> -->
                 </div>
             </div>
         </div>
@@ -60,28 +81,80 @@
 </html>
 
 <script>
-    // рисуем стильные иконки
-    //feather.replace();
-</script>
-
-<script>
     var task_board = new Vue({
-            el: '#task_board',
-            data: {
-                tasks: createTasksBoard(dataTasks)
+        el: '#task_board',
+        data: {
+            tasks: createTasksBoard(dataTasks),
+            allSelected: false
+        },
+
+        computed: {
+            selectAllButtonText() {
+                return this.allSelected ? 'Снять выделение' : 'Выделить все';
+            }
+        },
+
+        methods: {
+            handleText: function (task) {
+                console.log('handleText');
             },
 
-            methods: {
-                changeTaskBoard: function () {
-                    console.log(222);
-                },
+            handleBaby: function (task) {
+                console.log('handleBaby');
+            },
 
-                changeTaskBoard3: function () {
-                    console.log(3333);
-                },
+            handleCheckboxChange: function (task, event) {
+                var isChecked = event.target.checked;
+                console.log('task');
+                console.log(isChecked);
+
+                // Обновляем состояние allSelected на основе текущих чекбоксов
+                this.updateAllSelectedState();
+            },
+
+            selectAllCheckboxes: function () {
+                this.allSelected = !this.allSelected;
+                this.tasks.forEach(task => {
+                    task.checked = this.allSelected;
+                });
+
+                console.log(this.tasks);
+                console.log(this.allSelected ? 'Все чекбоксы выделены' : 'Все чекбоксы сняты');
+            },
+
+            updateAllSelectedState: function () {
+                // Проверяем, все ли чекбоксы выделены
+                const allChecked = this.tasks.every(task => task.checked);
+                const someChecked = this.tasks.some(task => task.checked);
+
+                if (allChecked) {
+                    this.allSelected = true;
+                } else if (!someChecked) {
+                    this.allSelected = false;
+                }
+                // Если часть чекбоксов выделена - оставляем allSelected как есть
+            },
+
+            handleCardClick: function (task, event) {
+                // Проверяем, был ли нажат Ctrl
+                if (event.ctrlKey || event.metaKey) {
+                    // Переключаем состояние чекбокса
+                    task.checked = !task.checked;
+
+                    this.tasks.forEach(task => {
+                        task.checked = this.allSelected;
+                    });
 
 
+                    console.log('Ctrl+клик: чекбокс переключен', task.checked);
+
+                    // Обновляем состояние allSelected
+                    this.updateAllSelectedState();
+
+                    // Предотвращаем всплытие события, чтобы не сработал handleText
+                    event.stopPropagation();
+                }
             }
         }
-    );
+    });
 </script>

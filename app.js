@@ -53,7 +53,7 @@ var dataTasks = [
     {
         "taskId": "d520445f-2516-4332-ac96-e113bb95857a",
         "taskDate": "11.11.2025",
-        "taskName": "Лыжи",
+        "taskName": "Лыжи 222",
         "taskDescription": "5051, Лыжи, 163, Atomic, vantage, черн оранж, 20-21",
         "columnId": "60f8d628-a555-11ef-93a8-005056c00008",
         "isСritical": false,
@@ -62,8 +62,8 @@ var dataTasks = [
     {
         "taskId": "49d558e5-20db-4c61-a710-cd206ae14bd5",
         "taskDate": "11.11.2025",
-        "taskName": "Лыжи",
-        "taskDescription": "лыжи (инв)",
+        "taskName": "11 Лыжи",
+        "taskDescription": "11 лыжи (инв)",
         "columnId": "66f0611f-a555-11ef-93a8-005056c00008",
         "isСritical": false,
         "images": "images/ITS_Лыжник.png"
