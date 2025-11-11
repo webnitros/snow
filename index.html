@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="vue.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body>
+<!-- <button type="button" onclick="createTasksBoardTest()">Сформировать</button> -->
+<div id="task_board">
+    <div class="container">
+        <div class="border row">
+            <div v-for="(task, index) in tasks" v-bind:id="'taskId='+task.taskId" class="col w-200">
+                <div class="card_task" v-bind:id="'taskId='+task.taskId">
+                    <div class="row">
+                        <div class="col col-3">
+                            <img class="card_task_image" :src="task.images" alt="">
+                        </div>
+                        <div class="col col-9" v-bind:id="'taskId='+task.taskId" v-bind:taskId='task.taskId'>
+                            <span>{{task.taskDescription}}</span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col ">
+                            <div class="card_task_options row justify-content-start">
+                                <div class="col-6">Начало:<b>11:01</b></div>
+                                <div class="col-6">Конец:<b>-</b></div>
+                                <div class="col-6">Кол:<b>1 шт</b></div>
+                                <div class="col-6">Сумма:<b>467,50</b></div>
+                                <div class="col-6">Статус:<b>Черновик</b></div>
+                                <div class="col-6">Часов:<b>45,5</b></div>
+                            </div>
+                            <div class="card_task_image_icon" @click="changeTaskBoard3">
+                                <img src="images/baby.jpeg" alt="">
+                            </div>
+
+                            <!-- <span v-bind:id="'taskId='+task.taskId">
+                                 {{task.taskDate}}
+                             </span>
+                             <span v-bind:id="'taskId='+task.taskId">{{task.taskName}}</span>
+                             <span v-if="task.isСritical" data-feather="flag"></span>
+                             <span v-if="!task.isСritical" data-feather="star"></span>-->
+                        </div>
+                    </div>
+
+
+                    <!-- <h7 v-bind:id="'taskId='+task.taskId">{{task.images}}</h7> -->
+                    <!-- <img src="images/item1.png"> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
+
+<script>
+    // рисуем стильные иконки
+    //feather.replace();
+</script>
+
+<script>
+    var task_board = new Vue({
+            el: '#task_board',
+            data: {
+                tasks: createTasksBoard(dataTasks)
+            },
+
+            methods: {
+                changeTaskBoard: function () {
+                    console.log(222);
+                },
+
+                changeTaskBoard3: function () {
+                    console.log(3333);
+                },
+
+
+            }
+        }
+    );
+</script>

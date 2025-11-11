@@ -1,0 +1,92 @@
+[
+  {
+    "taskId": "d520445f-2516-4332-ac96-e113bb95857a",
+    "taskDate": "11.11.2025",
+    "taskName": "Лыжи",
+    "taskDescription": "5051, Лыжи, 163, Atomic, vantage, черн оранж, 20-21",
+    "columnId": "60f8d628-a555-11ef-93a8-005056c00008",
+    "isСritical": false,
+    "images": "images/ITS_Лыжник.png"
+  },
+  {
+    "taskId": "49d558e5-20db-4c61-a710-cd206ae14bd5",
+    "taskDate": "11.11.2025",
+    "taskName": "Лыжи",
+    "taskDescription": "лыжи (инв)",
+    "columnId": "66f0611f-a555-11ef-93a8-005056c00008",
+    "isСritical": false,
+    "images": "images/ITS_Лыжник.png"
+  },
+  {
+    "taskId": "0650a273-2074-4abb-800f-c0cf4e039fe8",
+    "taskDate": "11.11.2025",
+    "taskName": "Лыжи",
+    "taskDescription": "_____, Лыжи, E S/MAX, Jr XS, C5 GW J 70, 20-21",
+    "columnId": "66f06120-a555-11ef-93a8-005056c00008",
+    "isСritical": false,
+    "images": "images/ITS_Лыжник.png"
+  },
+  {
+    "taskId": "1a85d823-8b91-4641-b5a7-f79fb6ece630",
+    "taskDate": "11.11.2025",
+    "taskName": "Лыжи",
+    "taskDescription": "_____, Лыжи, E S/MAX, Jr XS, C5 GW J 80, 20-21",
+    "columnId": "66f06122-a555-11ef-93a8-005056c00008",
+    "isСritical": false,
+    "images": "images/ITS_Лыжник.png"
+  },
+  {
+    "taskId": "3136c77c-d1ee-4215-a9b3-4bdb929712cd",
+    "taskDate": "11.11.2025",
+    "taskName": "Лыжи",
+    "taskDescription": "_____, Лыжи, E S/MAX, Jr XS, C5 GW J 90, 20-21",
+    "columnId": "66f06123-a555-11ef-93a8-005056c00008",
+    "isСritical": false,
+    "images": "images/ITS_Лыжник.png"
+  },
+  {
+    "taskId": "1261ed13-d634-4c64-a8b5-f7e9447dff74",
+    "taskDate": "11.11.2025",
+    "taskName": "Лыжи",
+    "taskDescription": "_____, Лыжи, L S/FORCE, Jr S, C5 GW 100, 20-21",
+    "columnId": "66f06124-a555-11ef-93a8-005056c00008",
+    "isСritical": false,
+    "images": "images/ITS_Лыжник.png"
+  },
+  {
+    "taskId": "fe622f2d-03cf-446e-9a5a-6501f0043ea5",
+    "taskDate": "11.11.2025",
+    "taskName": "Лыжи",
+    "taskDescription": "_____, Лыжи, L S/FORCE, Jr S, C5 GW 110, 20-21",
+    "columnId": "66f06126-a555-11ef-93a8-005056c00008",
+    "isСritical": false,
+    "images": "images/ITS_Лыжник.png"
+  },
+  {
+    "taskId": "a1fc6584-ee62-4281-8fde-7104c9b3e77b",
+    "taskDate": "11.11.2025",
+    "taskName": "Лыжи",
+    "taskDescription": "_____, Лыжи, L S/FORCE, Jr S, C5 GW 120, 20-21",
+    "columnId": "66f06127-a555-11ef-93a8-005056c00008",
+    "isСritical": false,
+    "images": "images/ITS_Лыжник.png"
+  },
+  {
+    "taskId": "10bcb0a1-e3d2-4f55-9e9d-06d7a58d311e",
+    "taskDate": "11.11.2025",
+    "taskName": "Лыжи",
+    "taskDescription": "_____, Лыжи, E S/FORCE, Jr M, L6 GW 130, 20-21",
+    "columnId": "66f06128-a555-11ef-93a8-005056c00008",
+    "isСritical": false,
+    "images": "images/ITS_Лыжник.png"
+  },
+  {
+    "taskId": "86e0c647-8ef2-49b6-b7ca-4d0192317c76",
+    "taskDate": "11.11.2025",
+    "taskName": "Лыжи",
+    "taskDescription": "_____, Лыжи, L S/FORCE, Jr S, C5 GW 100, 20-21",
+    "columnId": "6cef3a74-a555-11ef-93a8-005056c00008",
+    "isСritical": false,
+    "images": "images/ITS_Лыжник.png"
+  }
+]
